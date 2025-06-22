@@ -1,0 +1,296 @@
+/* Custom styles for Greenlight Landing Page */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+.speed-section {
+    background-image: url("/assets/SpeedResultBg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Phone mockup animations */
+.phone-mockup {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Phone preview styles */
+.phone-preview {
+    position: relative;
+    overflow: hidden;
+}
+
+.phone-preview::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+}
+
+/* Laptop mockup styles */
+.laptop-mockup {
+    position: relative;
+}
+
+.laptop-mockup::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120%;
+    height: 8px;
+    background: #374151;
+    border-radius: 0 0 12px 12px;
+}
+
+/* Scroll button styles */
+.scroll-btn {
+    transition: all 0.3s ease;
+}
+
+.scroll-btn:hover {
+    transform: scale(1.1);
+}
+
+.scroll-btn:active {
+    transform: scale(0.95);
+}
+
+/* Website cards hover effects */
+.hover\:shadow-xl:hover {
+    transform: translateY(-4px);
+    transition: all 0.3s ease;
+}
+
+/* Custom scrollbar for horizontal scroll */
+.overflow-x-auto::-webkit-scrollbar {
+    height: 8px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 4px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Form focus states */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(107, 70, 193, 0.1);
+}
+
+/* Button hover animations */
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Navigation link hover effects */
+nav a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #6B46C1;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Section reveal animations */
+section {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s ease;
+}
+
+/* Mobile menu animation */
+#mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+#mobile-menu.show {
+    max-height: 300px;
+}
+
+/* Card grid responsive adjustments */
+@media (max-width: 768px) {
+    .phone-mockup {
+        width: 280px;
+        height: 320px;
+    }
+
+    .laptop-mockup {
+        padding: 16px;
+    }
+
+    .laptop-mockup .bg-white {
+        height: 200px;
+    }
+}
+
+/* Loading animation for form submission */
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: loading-sweep 1.5s infinite;
+}
+
+@keyframes loading-sweep {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+/* Success/Error form states */
+.form-success {
+    background-color: #10B981 !important;
+    color: white !important;
+}
+
+.form-error {
+    background-color: #EF4444 !important;
+    color: white !important;
+}
+
+/* Testimonial card hover effects */
+.testimonial-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Star rating hover effects */
+.star-rating svg {
+    transition: transform 0.2s ease;
+}
+
+.star-rating:hover svg {
+    transform: scale(1.1);
+}
+
+/* Social media icons animation */
+.social-icon {
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Custom utilities */
+.text-gradient {
+    background: linear-gradient(135deg, #6B46C1 0%, #10B981 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.bg-gradient-greenlight {
+    background: linear-gradient(135deg, #6B46C1 0%, #8B5CF6 50%, #10B981 100%);
+}
+
+/* Backdrop blur support */
+@supports (backdrop-filter: blur(10px)) {
+    .backdrop-blur {
+        backdrop-filter: blur(10px);
+    }
+}
+
+/* Print styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .bg-greenlight-purple {
+        background-color: #4C1D95 !important;
+    }
+
+    .text-gray-600 {
+        color: #000000 !important;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .phone-mockup {
+        animation: none;
+    }
+}
