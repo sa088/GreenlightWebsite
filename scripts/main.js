@@ -1,5 +1,3 @@
-// Greenlight Landing Page JavaScript
-
 $(document).ready(function () {
     // Mobile menu toggle
     $('#mobile-menu-btn').click(function () {
@@ -99,16 +97,6 @@ $(document).ready(function () {
         return emailRegex.test(email);
     }
 
-    // Navbar background on scroll
-    // $(window).scroll(function() {
-    //     const navbar = $('nav');
-    //     if ($(window).scrollTop() > 50) {
-    //         navbar.addClass('bg-white/98 shadow-lg').removeClass('bg-white/95');
-    //     } else {
-    //         navbar.removeClass('bg-white/98 shadow-lg').addClass('bg-white/95');
-    //     }
-    // });
-
     // Animate elements on scroll
     function animateOnScroll() {
         $('.animate-on-scroll').each(function () {
@@ -200,9 +188,6 @@ $(document).ready(function () {
                 const perfData = performance.timing;
                 const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
                 console.log('Page load time:', pageLoadTime + 'ms');
-
-                // Send analytics if needed
-                // analytics.track('page_load_time', { duration: pageLoadTime });
             }, 0);
         });
     }
